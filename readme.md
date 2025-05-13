@@ -38,7 +38,7 @@ python main.py --task split -s drugbank -t hit -d cdr -hl 40
 
 ### (2) Train the model
 
-If it is the first time to run the code, the pre-trained model and the knowledge graph model need to be called first to extract the vector representations of compounds and proteins. Please download [prot_bert](https://huggingface.co/Rostlab/prot_bert/tree/main) and [ChemBERTa-zinc-base-v1](https://huggingface.co/seyonec/ChemBERTa-zinc-base-v1) to your local device and store them in directory *./model_hub*. You need to execute the following code before starting the training model. 
+If it is the first time to run the code, the pre-trained model and the knowledge graph model need to be called first to extract the vector representations of compounds and proteins. Please download [prot_bert](https://huggingface.co/Rostlab/prot_bert/tree/main) and [ChemBERTa-zinc-base-v1](https://huggingface.co/seyonec/ChemBERTa-zinc-base-v1) to your local device and store them in directory *./model_hub*. You need to execute the following code before starting training the model. 
 
 ```
 python main.py --task extract -s drugbank -t hit

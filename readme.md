@@ -73,4 +73,4 @@ python main.py --task predict -s drugbank -t hit -m CMTarget -mp [model path]
 
 <b>If you have better suggestions or questions about our work, please contact us: <a>*kuoyang@bjtu.edu.cn*</a>. </b> 
 
-<b>Welcome to follow our project on GitHub: <a>[] </a> and <a> [] </a>. </b>
+<b>Welcome to follow our project on GitHub: <a>https://github.com/Tangerti/CMTarget#</a>. </b>

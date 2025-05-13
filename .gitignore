@@ -1,0 +1,7 @@
+logs/
+checkpoints/*.*
+model_hub/Rostlab/prot_bert/*.*
+model_hub/seyonec/ChemBERTa-zinc-base-v1/*.*
+data/feature/*.*
+data/cdr/*.*
+*/__pycache__

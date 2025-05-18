@@ -8,7 +8,7 @@ In this study, we proposed a cross-domain multimodal transfer learning method to
 
 ## 2. Overview
 
-![alt text](./fig/image1.png)
+![image1](./fig/image1.png)
 Fig1. Overview of drug repositioning framework.
 
 ## 3. Install Python libraries needed

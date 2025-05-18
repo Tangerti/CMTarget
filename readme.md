@@ -44,6 +44,8 @@ If it is the first time to run the code, the pre-trained model and the knowledge
 python main.py --task extract -s drugbank -t hit
 ```
 
+And we use [KDGene](https://github.com/2020MEAI/KDGene) to generate drugs and protein vector said, you can download it from [link](https://drive.google.com/drive/folders/15hB-KN5KL9c7mTBuPVpX7Et0-EamLv9i?usp=share_link) to get drugs and protein extraction of knowledge map vectors and store them in directory *./data/feature*.
+
 Start training the model.
 
 ```

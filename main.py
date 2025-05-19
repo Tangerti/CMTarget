@@ -10,7 +10,7 @@ from predictor.CMTargetPredictor import CMTargetPredictor
 from utils.utils import *
 from datasets.preextract import *
 
-def prepare(config_path):
+def prepare():
     parser = argparse.ArgumentParser()
     parser.add_argument('-s', '--source', default='drugbank')
     parser.add_argument('-t', '--target', default='hit')
@@ -32,37 +32,37 @@ def prepare(config_path):
     parser.add_argument('-nw', '--num_workers', type=int, default=0)
     args = parser.parse_args()
 
-    with open(config_path, 'r') as f:
-        config = json.load(f)
-        config['source'] = args.source
-        config['target'] = args.target
-        config['model'] = args.model
-        config['his_len'] = args.history_length
-        config['epoch'] = args.epoch
-        config['lr'] = args.learning_rate
-        config['wd'] = args.weight_decay
-        config['gpu'] = args.gpu
-        config['emb'] = args.embedding_dim
-        config['meta_dim'] = args.meta_dim
-        config['batch_size'] = args.batch_size
-        config['timestamp'] = datetime.now().strftime("%Y%m%d%H%M%S")
-        config['model_path'] = args.model_path
-        config['task'] = args.task
-        config['data_dir'] = args.data_dir
-        config['num_workers'] = args.num_workers
-        config['score'] = args.score
+    config = json.load(f)
+    config['source'] = args.source
+    config['target'] = args.target
+    config['model'] = args.model
+    config['his_len'] = args.history_length
+    config['epoch'] = args.epoch
+    config['lr'] = args.learning_rate
+    config['wd'] = args.weight_decay
+    config['gpu'] = args.gpu
+    config['emb'] = args.embedding_dim
+    config['meta_dim'] = args.meta_dim
+    config['batch_size'] = args.batch_size
+    config['timestamp'] = datetime.now().strftime("%Y%m%d%H%M%S")
+    config['model_path'] = args.model_path
+    config['task'] = args.task
+    config['data_dir'] = args.data_dir
+    config['num_workers'] = args.num_workers
+    config['score'] = args.score
+
     return config
 
 if __name__ == '__main__':
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print('Device: {}'.format(device))
-    config_path = 'configs/config.json'
-    configs = prepare(config_path)
+    configs = prepare()
     log_path = 'logs/{}'.format(configs['timestamp'])
 
-    if not os.path.exists(config_path):
-        os.makedirs(config_path)
-    config_path = os.path.join(config_path, 'config.json')
+    config_dir = 'configs'
+    if not os.path.exists(config_dir):
+        os.makedirs(config_dir)
+    config_path = os.path.join(config_dir, 'config.json')
     with open(config_path, 'w') as f:
         json.dump(configs, f, indent=4)
 
